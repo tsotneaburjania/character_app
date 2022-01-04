@@ -1,6 +1,5 @@
+import 'package:character_app/data/planet.dart';
 import 'package:flutter/material.dart';
-import 'package:tsotne_aburjania_midterm_clothing_app_variant_1/data/detail_blueprint.dart';
-import 'package:tsotne_aburjania_midterm_clothing_app_variant_1/logic/helper_functions.dart';
 
 class DetailsScreen extends StatefulWidget {
   const DetailsScreen({Key? key}) : super(key: key);
@@ -11,31 +10,21 @@ class DetailsScreen extends StatefulWidget {
 
 class _DetailsScreenState extends State<DetailsScreen> {
 
-  int id = 0;
-  String  name = "";
-  String image = "";
-  String size = "";
-  double price = 0.0;
-  String description = "";
+  String name = "";
+  String  diameter = "";
+  String climate = "";
+  String gravity = "";
+  String terrain = "";
+  String population = "";
 
   @override
   Widget build(BuildContext context) {
     double viewportHeight = MediaQuery.of(context).size.height;
-    final detailObject = ModalRoute.of(context)!.settings.arguments as DetailBlueprint;
+    final detailObject = ModalRoute.of(context)!.settings.arguments as Planet;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Details'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.delete,
-            ),
-            onPressed: () {
-              removeItemDialogue(context, detailObject.index);
-            },
-          )
-        ],
         centerTitle: true,
       ),
       body: ListView(
@@ -52,7 +41,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       Center(
                         child:
                           Text(
-                            detailObject.todoItem.todo,
+                            detailObject.name,
                             style: const TextStyle(fontSize: 40.0, color: Colors.yellow),
                           )
                       ),
@@ -69,7 +58,71 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        detailObject.todoItem.description,
+                        detailObject.diameter,
+                        style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                ),
+                Container(
+                    width: 300,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          color: Colors.grey, // Set border color
+                          width: 1.0),   // Set border width
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        detailObject.climate,
+                        style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                ),
+                Container(
+                    width: 300,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          color: Colors.grey, // Set border color
+                          width: 1.0),   // Set border width
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        detailObject.gravity,
+                        style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                ),
+                Container(
+                    width: 300,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          color: Colors.grey, // Set border color
+                          width: 1.0),   // Set border width
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        detailObject.terrain,
+                        style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                ),
+                Container(
+                    width: 300,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                          color: Colors.grey, // Set border color
+                          width: 1.0),   // Set border width
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        detailObject.population,
                         style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
                         textAlign: TextAlign.center,
                       ),

@@ -1,3 +1,3 @@
-# tsotne_aburjania_midterm_clothing_app_variant_1
+# Character App
 
-Simple clothing store app developed by Tsotne Aburjania.
+A simple app that uses SWAPI to fetch data about movie characters.

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tsotne_aburjania_midterm_clothing_app_variant_1/data/todo_item.dart';
-import 'package:tsotne_aburjania_midterm_clothing_app_variant_1/logic/crud_operations.dart';
-import 'package:tsotne_aburjania_midterm_clothing_app_variant_1/presentation/widgets/item_card.dart';
+import 'package:character_app/logic/crud_operations.dart';
 
 import 'package:http/http.dart' as http;
 
@@ -18,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    futureTodo = CRUDOperations.fetchAllTodos();
+    // futureTodo = CRUDOperations.fetchAllChars();
   }
 
 
@@ -37,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             future: futureTodo,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
+
                 return GridView.builder(
                     itemCount: snapshot.data!.length,
                     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
@@ -53,11 +52,25 @@ class _HomeScreenState extends State<HomeScreen> {
                         }
                       }())!,
                     ),
-                    itemBuilder: (BuildContext context, int index) =>
-                        ItemCard(
-                            todoItem:
-                            TodoItem(id: snapshot.data![index]["id"], todo: snapshot.data![index]["todo"], description: snapshot.data![index]["description"]),
-                            index: snapshot.data![index]["id"])
+                    itemBuilder: (BuildContext context, int index) {
+                      return Card(
+                        color: Colors.yellow,
+                        child: Column(
+                          children: <Widget>[
+                            Expanded(
+                              flex: 2,
+                              child: ListTile(
+                                title: Padding(
+                                  padding: const EdgeInsets.only(bottom: 8.0),
+                                  child: Text(snapshot.data![index]["results"]["name"], style: const TextStyle(color: Colors.black, fontSize: 25.0), textAlign: TextAlign.center,),
+                                ),
+                                subtitle: Text(snapshot.data![index]["results"]["homeworld"], style: const TextStyle(color: Colors.black), textAlign: TextAlign.center,),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
                 );
               }
               else if (snapshot.hasError) {

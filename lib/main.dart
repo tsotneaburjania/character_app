@@ -1,8 +1,7 @@
+import 'package:character_app/presentation/screens/alt_home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:tsotne_aburjania_midterm_clothing_app_variant_1/presentation/screens/add_screen.dart';
-import 'package:tsotne_aburjania_midterm_clothing_app_variant_1/presentation/screens/details_screen.dart';
-import 'package:tsotne_aburjania_midterm_clothing_app_variant_1/presentation/screens/edit_screen.dart';
-import 'package:tsotne_aburjania_midterm_clothing_app_variant_1/presentation/screens/home_screen.dart';
+import 'package:character_app/presentation/screens/details_screen.dart';
+import 'package:character_app/presentation/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,10 +35,8 @@ class MyApp extends StatelessWidget {
 
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomeScreen(),
-        '/add': (context) => const AddScreen(),
+        '/': (context) => const AltHomeScreen(title: "Characters",),
         '/details': (context) => const DetailsScreen(),
-        '/edit': (context) => const EditScreen(),
       },
     );
   }
