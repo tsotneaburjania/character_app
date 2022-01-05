@@ -2,9 +2,18 @@ import 'package:character_app/presentation/screens/alt_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:character_app/presentation/screens/details_screen.dart';
 import 'package:character_app/presentation/screens/home_screen.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ],
+  ).then((val) {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -31,7 +40,7 @@ class MyApp extends StatelessWidget {
         ),
 
       ),
-      title: 'Task Management',
+      title: 'Characters',
 
       initialRoute: '/',
       routes: {

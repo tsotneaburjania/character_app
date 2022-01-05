@@ -33,6 +33,7 @@ class _AltHomeScreenState extends State<AltHomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: FutureBuilder(
         future: Future.wait([chars, planets]),

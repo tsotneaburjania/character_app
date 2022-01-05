@@ -57,10 +57,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        detailObject.diameter,
-                        style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          const Text("Diameter", textAlign: TextAlign.center, style: TextStyle(color: Colors.yellow),),
+                          Text(
+                            detailObject.diameter,
+                            style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     )
                 ),
@@ -73,10 +78,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        detailObject.climate,
-                        style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          const Text("Climate", textAlign: TextAlign.center, style: TextStyle(color: Colors.yellow),),
+                          Text(
+                            detailObject.climate,
+                            style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     )
                 ),
@@ -89,10 +99,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        detailObject.gravity,
-                        style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          const Text("Gravity", textAlign: TextAlign.center, style: TextStyle(color: Colors.yellow),),
+                          Text(
+                            detailObject.gravity,
+                            style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     )
                 ),
@@ -105,10 +120,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        detailObject.terrain,
-                        style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          const Text("Terrain", textAlign: TextAlign.center, style: TextStyle(color: Colors.yellow),),
+                          Text(
+                            detailObject.terrain,
+                            style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     )
                 ),
@@ -121,10 +141,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        detailObject.population,
-                        style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
-                        textAlign: TextAlign.center,
+                      child: Column(
+                        children: [
+                          const Text("Population", textAlign: TextAlign.center, style: TextStyle(color: Colors.yellow),),
+                          Text(
+                            detailObject.population,
+                            style: const TextStyle(fontSize: 20.0, color: Colors.yellow),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
                       ),
                     )
                 )
