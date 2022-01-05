@@ -1,7 +1,6 @@
 import 'package:character_app/presentation/screens/alt_home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:character_app/presentation/screens/details_screen.dart';
-import 'package:character_app/presentation/screens/home_screen.dart';
 import 'package:flutter/services.dart';
 
 void main() {
